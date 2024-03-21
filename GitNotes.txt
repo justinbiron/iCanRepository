@@ -1,0 +1,6 @@
+Git Commands
+-git clone https://github.com/dalsifusdoicuad 
+-git add .
+-git commit -m ""
+-git push
+-git pull
