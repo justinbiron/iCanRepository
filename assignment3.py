@@ -1,4 +1,5 @@
 #1
+print("")
 print("number one:")
 
 name = str(input("Enter your name: "))
@@ -6,8 +7,8 @@ reverse_name = name[::-1]
 print(reverse_name)
 
 
+#2
 print("")
-# 2
 print("number 2:")
 
 super_cool_list = [1, 1, 4, 5, 5, "j", 9, 9, "k", 3, 1]
@@ -23,31 +24,39 @@ def unique_values(original_list):
 unique_values(super_cool_list)
 
 
-print("")
 #3
+print("")
 print("number 3:")
 
 true_list = [3, 0, 0, 0, 5, "y", "y", 7]
 false_list1 = [1, 2, "g", "g", 3]
 false_list2 = [1, 0, 1, 1]
-print(even_cooler_list1)
-print(even_cooler_list2)
-print(even_cooler_list3)
+print(true_list)
+print(false_list1)
+print(false_list2)
 
 def searching_for_triples(list):
     does_it_have_triples = False
-    length = list.len()
     for i in list:
         index = list.index(i)
-        if index > 2 and index :
-            if (list.index(index) == list.index(index-1) and list.index(index-2)) or (list.index(index) == list.index(index+1) and list.index(index+2)):
+        if index <= len(list) - 2:
+            if i == list[index + 1] == list[index +2]:
                 does_it_have_triples = True
-        elif index
     print(does_it_have_triples)
 
-searching_for_triples(even_cooler_list1)
-searching_for_triples(even_cooler_list2)
-searching_for_triples(even_cooler_list3)
+searching_for_triples(true_list)
+searching_for_triples(false_list1)
+searching_for_triples(false_list2)
 
-print("")
+
 #4
+print("")
+print("number 4:")
+
+import os
+file = open(r"C:\Users\iCan Student\Desktop\coding projects\randomtext.txt")
+lines = 0
+for line in file:
+    if line.strip():
+        lines += 1
+print(lines)
