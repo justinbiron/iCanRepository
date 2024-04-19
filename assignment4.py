@@ -12,8 +12,8 @@ wn.register_shape(r"c:\Users\iCan Student\Downloads\grandma.gif")
 clicks = 0
 increase_number_clicks = 1
 increase_number_time = 0
-grannyCost = 100
-cursorCost = 50
+grannyCostAmount = 25
+cursorCostAmount = 10
 
 cookie = turtle.Turtle()
 cookie.shape(r"c:\Users\iCan Student\Downloads\cookie.gif")
@@ -37,35 +37,35 @@ cursorCountText = turtle.Turtle()
 cursorCountText.hideturtle()
 cursorCountText.color("black")
 cursorCountText.penup()
-cursorCountText.goto(200, 256)
+cursorCountText.goto(450, 275)
 cursorCountText.write(f"Cursors: {increase_number_clicks - 1}", align ="center", font=("Courier New", 32, "normal"))
 
 cursorCost = turtle.Turtle()
 cursorCost.hideturtle()
 cursorCost.color("black")
 cursorCost.penup()
-cursorCost.goto(200, -100)
-cursorCost.write(f"Cursor Cost: {cursorCost}", align ="center", font=("Courier New", 16, "normal"))
+cursorCost.goto(450, 260)
+cursorCost.write(f"Cursor Cost: {cursorCostAmount}", align ="center", font=("Courier New", 16, "normal"))
 
 grannyCountText = turtle.Turtle()
 grannyCountText.hideturtle()
 grannyCountText.color("black")
 grannyCountText.penup()
-grannyCountText.goto(-200, 256)
+grannyCountText.goto(-450, 275)
 grannyCountText.write(f"Grannies: {increase_number_time}", align ="center", font=("Courier New", 32, "normal"))
 
 grannyCost = turtle.Turtle()
 grannyCost.hideturtle()
 grannyCost.color("black")
 grannyCost.penup()
-grannyCost.goto(-200, 0)
-grannyCost.write(f"Granny Cost: {grannyCost}", align ="center", font=("Courier New", 16, "normal"))
+grannyCost.goto(-450, 260)
+grannyCost.write(f"Granny Cost: {grannyCostAmount}", align ="center", font=("Courier New", 16, "normal"))
 
 ya = turtle.Turtle()
 ya.hideturtle()
 ya.color("black")
 ya.penup()
-ya.goto(120, -256)
+ya.goto(0, 275)
 ya.write(f"Cookies: {clicks}", align ="center", font=("Courier New", 32, "normal"))
 
 def clicked(x, y):
@@ -86,34 +86,37 @@ def time_bla_bla():
 def cursor_upgrade(x, y):
     global clicks
     global increase_number_clicks
-    global cursorCost
-    if clicks >= cursorCost:
-        clicks -= cursorCost
-        cursorCost *= 2
+    global cursorCostAmount
+    if clicks >= cursorCostAmount:
+        clicks -= cursorCostAmount
+        cursorCostAmount *= 2
         increase_number_clicks += 1
         cursorCountText.clear()
         cursorCountText.write(f"Cursors: {increase_number_clicks - 1}", align ="center", font=("Courier New", 32, "normal"))
         ya.clear()
         ya.write(f"Cookies: {clicks}", align ="center", font=("Courier New", 32, "normal"))
+        cursorCost.clear()
+        cursorCost.write(f"Cursor Cost: {cursorCostAmount}", align ="center", font=("Courier New", 16, "normal"))
     else:
         ya.clear()
         ya.write(f"Not enough cookies!", align ="center", font=("Courier New", 32, "normal"))
         time.sleep(1)
         ya.clear()
         ya.write(f"Cookies: {clicks}", align ="center", font=("Courier New", 32, "normal"))
-
 def granny_upgrade(x, y):
     global clicks
     global increase_number_time
-    global grannyCost
-    if clicks >= grannyCost:
-        clicks -= grannyCost
-        grannyCost *= 2
+    global grannyCostAmount
+    if clicks >= grannyCostAmount:
+        clicks -= grannyCostAmount
+        grannyCostAmount *= 2
         increase_number_time += 1
         grannyCountText.clear()
         grannyCountText.write(f"Grannies: {increase_number_time}", align ="center", font=("Courier New", 32, "normal"))
         ya.clear()
         ya.write(f"Cookies: {clicks}", align ="center", font=("Courier New", 32, "normal"))
+        grannyCost.clear()
+        grannyCost.write(f"Granny Cost: {grannyCostAmount}", align ="center", font=("Courier New", 16, "normal"))
     else:
         ya.clear()
         ya.write(f"Not enough cookies!", align ="center", font=("Courier New", 32, "normal"))
