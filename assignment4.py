@@ -4,7 +4,7 @@ import threading
 
 wn = turtle.Screen()
 wn.title("Cookier Clicker")
-wn.bgcolor("white") 
+wn.bgcolor("cyan")
 wn.register_shape(r"c:\Users\iCan Student\Downloads\cookie.gif")
 wn.register_shape(r"c:\Users\iCan Student\Downloads\cursor.gif")
 wn.register_shape(r"c:\Users\iCan Student\Downloads\grandma.gif")
