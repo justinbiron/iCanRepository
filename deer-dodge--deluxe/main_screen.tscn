@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://bbw7n2hshocvo"]
+[gd_scene load_steps=3 format=3 uid="uid://bbw7n2hshocvo"]
+
+[ext_resource type="PackedScene" uid="uid://e88cbc7elxeg" path="res://pixel_car.glb" id="1_tjn2e"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0hkt3"]
 
 [node name="Node3D" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_0hkt3")
+
+[node name="VehicleBody3D" type="VehicleBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.9961576, 0.023537606, -0.084356934, 0.025602248, 0.8428668, 0.5375129, 0.08375342, -0.53760725, 0.83902556, -0.38346314, 5.3926864, 3.5707192)
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("1_tjn2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3085661, 2.4912415, -0.46528625)
+metadata/_edit_lock_ = true
