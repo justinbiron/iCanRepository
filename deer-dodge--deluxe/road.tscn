@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjaflwmcwstei"]
+
+[ext_resource type="PackedScene" uid="uid://b2iej13i2e4hr" path="res://highway.glb" id="1_x0d2t"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sketchfab_Scene3" parent="." instance=ExtResource("1_x0d2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.003981, 0.013476133, 7.0076847)
+metadata/_edit_group_ = true
+
+[node name="Sketchfab_Scene6" parent="." instance=ExtResource("1_x0d2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.003981, 0.013476133, -6.9923153)
+metadata/_edit_group_ = true
+
+[node name="Sketchfab_Scene4" parent="." instance=ExtResource("1_x0d2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.996019, 0.013476133, 7.0076847)
+metadata/_edit_group_ = true
+
+[node name="Sketchfab_Scene5" parent="." instance=ExtResource("1_x0d2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.996019, 0.013476133, -6.9923153)
+metadata/_edit_group_ = true

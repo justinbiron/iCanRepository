@@ -1,0 +1,8 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1761242553
+highway.glb::PackedScene::4298294833330046403::1760644192::1760644193::1::::<><><>0<>0<>7c78cc5bd29e5646e150b0976eb84f67<>res://.godot/imported/highway.glb-a56d8aaaf4c4c1d18ad803493b3c6955.scn::uid://c0srcjfangc0f::::res://highway_0.jpg
+highway_0.jpg::CompressedTexture2D::6565757498826712095::1760644192::1760644196::1::::<><><>0<>0<>394c27d4a24fa61c00ad330918302b4f<>res://.godot/imported/highway_0.jpg-c6006c64f1744e3b36eb2aeb163792fc.s3tc.ctex::
+icon.svg::CompressedTexture2D::4029564384023401928::1760638779::1760642362::1::::<><><>0<>0<>3df6084254d5a1d2e9cff374d7d5c0bb<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+low_poly_forest_road.glb::PackedScene::30201445860658758::1760644164::1760644169::1::::<><><>0<>0<>65ca42331e7caec5e1905a26c35d0bf3<>res://.godot/imported/low_poly_forest_road.glb-3fc786e917a6e46d24583282c7d024d7.scn::
+main_screen.tscn::PackedScene::2503993426781569088::1760638779::0::1::::<><><>0<>0<><>::
+road.tscn::PackedScene::5404865362997635724::1760644541::0::1::::<><><>0<>0<><>::uid://b2iej13i2e4hr::::res://highway.glb
