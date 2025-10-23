@@ -17,8 +17,15 @@
 physics_material_override = SubResource("PhysicsMaterial_0hkt3")
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
+gravity_scale = 0.0
+script = ExtResource("1_w0p2i")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24886227, 0, 0)
+
+[node name="Sketchfab_Scene2" parent="VehicleBody3D/MeshInstance3D" instance=ExtResource("1_tjn2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3085661, 2.4912415, -0.46528625)
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D"]
 
