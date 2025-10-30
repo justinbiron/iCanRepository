@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b37pibpqdxq36" path="res://highway_fence.glb" id="7_hndgg"]
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.336739, 0, 0)
 
 [node name="Forest" type="Node3D" parent="."]
 
