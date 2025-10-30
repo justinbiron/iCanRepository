@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c033emwwfvwjh"
-path.s3tc="res://.godot/imported/hyundai_stargazer_0.png-3c420eb6ac98151e6122dcb0f6353732.s3tc.ctex"
+uid="uid://bpobnuirtp653"
+path.s3tc="res://.godot/imported/Material_albedo2.png-d9b6d0874deb82a44b0992540992362d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "7bb7a37a1af9e3b447628ea5a7fa1184"
-}
 
 [deps]
 
-source_file="res://hyundai_stargazer_0.png"
-dest_files=["res://.godot/imported/hyundai_stargazer_0.png-3c420eb6ac98151e6122dcb0f6353732.s3tc.ctex"]
+source_file="res://textures/Material_albedo2.png"
+dest_files=["res://.godot/imported/Material_albedo2.png-d9b6d0874deb82a44b0992540992362d.s3tc.ctex"]
 
 [params]
 

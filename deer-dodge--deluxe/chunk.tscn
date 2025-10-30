@@ -459,6 +459,10 @@ metadata/_edit_group_ = true
 transform = Transform3D(1.7047441e-07, 0, -1.2800001, 0, 0.9072, 0, 1.2999998, 0, 1.6785174e-07, -11.826927, 0.8653879, 0.13103801)
 metadata/_edit_group_ = true
 
+[node name="Sketchfab_Scene22" parent="Rails/Rails2" instance=ExtResource("7_hndgg")]
+transform = Transform3D(1.7047441e-07, 0, -1.2800001, 0, 0.9072, 0, 1.2999998, 0, 1.6785174e-07, -17.06888, 0.8653879, 0.13103801)
+metadata/_edit_group_ = true
+
 [node name="Sketchfab_Scene14" parent="Rails/Rails2" instance=ExtResource("7_hndgg")]
 transform = Transform3D(1.7047441e-07, 0, -1.2800001, 0, 0.9072, 0, 1.2999998, 0, 1.6785174e-07, 5, 0.8653879, -13.799562)
 metadata/_edit_group_ = true

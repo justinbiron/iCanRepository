@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c87vg2mpiuef5"
-path.s3tc="res://.godot/imported/low-poly_pixelated_sport_car_0.png-332ae1d032783a6cecbebe6160e42282.s3tc.ctex"
+uid="uid://bwm4dwen6emgl"
+path.s3tc="res://.godot/imported/palette_021_albedo.png-dbd4050fada174b8d3b6a9085b8992ae.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "0a405dcb35eea9a58da55d5648f59e38"
-}
 
 [deps]
 
-source_file="res://low-poly_pixelated_sport_car_0.png"
-dest_files=["res://.godot/imported/low-poly_pixelated_sport_car_0.png-332ae1d032783a6cecbebe6160e42282.s3tc.ctex"]
+source_file="res://textures/palette_021_albedo.png"
+dest_files=["res://.godot/imported/palette_021_albedo.png-dbd4050fada174b8d3b6a9085b8992ae.s3tc.ctex"]
 
 [params]
 
