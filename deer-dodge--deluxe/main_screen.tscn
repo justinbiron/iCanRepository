@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbw7n2hshocvo"]
+[gd_scene load_steps=6 format=3 uid="uid://bbw7n2hshocvo"]
 
 [ext_resource type="PackedScene" uid="uid://e88cbc7elxeg" path="res://pixel_car.glb" id="1_tjn2e"]
 [ext_resource type="Script" uid="uid://cikaa0jf4tf6r" path="res://vehicleMovement.gd" id="1_w0p2i"]
 [ext_resource type="PackedScene" uid="uid://u57kwnwxi64f" path="res://deer.glb" id="3_7a4el"]
+[ext_resource type="Script" uid="uid://dg3ech4bnga6y" path="res://CarY.gd" id="4_kwhh3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0hkt3"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="RigidBody3D"]
+mass = 0.001
+gravity_scale = 0.0
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_0hkt3")
@@ -25,25 +28,32 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.9961576, 0.023537606, -0.084356934, 0.025602248, 0.8428668, 0.5375129, 0.08375342, -0.53760725, 0.83902556, -0.38346314, 5.3926864, 3.5707192)
+transform = Transform3D(0.9961576, 0.0235376, -0.08435693, 5.2975494e-05, 0.9630456, 0.26933837, 0.08757914, -0.26830792, 0.95934397, 0.6353328, 5.3926864, 8.209092)
+current = true
+fov = 49.2
+near = 0.25
 
 [node name="RigidBody3D2" type="RigidBody3D" parent="."]
 transform = Transform3D(2.6278692e-16, -6.0118635e-09, 0.13753541, -0.13753541, -6.0118635e-09, -2.9124256e-23, 6.0118635e-09, -0.13753541, -6.0118635e-09, -0.4381137, 1.604651, -2.8866916)
+gravity_scale = 0.0
 
 [node name="Sketchfab_Scene" parent="RigidBody3D2" instance=ExtResource("3_7a4el")]
-transform = Transform3D(25.975689, 5.628416e-07, -19.204863, -1.1161002e-06, 32.304226, -5.628424e-07, 19.204863, 1.1161007e-06, 25.975689, 0.05942726, 3.2424865, -2.456336)
+transform = Transform3D(-8.588046e-07, -32.304226, 2.6688042e-07, 25.975687, -8.4922067e-07, -19.204866, 19.204866, -2.959616e-07, 25.975687, -16.381096, 3.242485, -2.456336)
 
 [node name="RigidBody3D3" type="RigidBody3D" parent="."]
 transform = Transform3D(0.138, 0, 0, 0, 0.138, 0, 0, 0, 0.138, 1.6633139, 1.6274633, -2.843336)
+gravity_scale = 0.0
 
 [node name="Sketchfab_Scene2" parent="RigidBody3D3" instance=ExtResource("3_7a4el")]
-transform = Transform3D(19.20473, -5.725874e-07, 25.975506, -25.975506, -1.1354255e-06, 19.20473, 5.725874e-07, -32.304, -1.1354255e-06, 0.49420166, 1.8299829, -3.0495944)
+transform = Transform3D(19.204731, -5.7258734e-07, 25.975504, 2.8066905, 32.11487, -2.075098, -25.823425, 3.4904935, 19.092295, 0.49420166, 15.384188, -3.0495949)
 
 [node name="VehicleBody3D2" type="VehicleBody3D" parent="."]
+gravity_scale = 0.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D2"]
 
 [node name="Sketchfab_Scene" parent="VehicleBody3D2/MeshInstance3D" instance=ExtResource("1_tjn2e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3651743, 0, -0.4830222)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3651743, 2.708447, -0.33312464)
+script = ExtResource("4_kwhh3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D2"]
