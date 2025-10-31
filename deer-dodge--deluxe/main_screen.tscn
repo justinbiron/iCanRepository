@@ -1,19 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbw7n2hshocvo"]
+[gd_scene load_steps=11 format=3 uid="uid://bbw7n2hshocvo"]
 
 [ext_resource type="PackedScene" uid="uid://e88cbc7elxeg" path="res://pixel_car.glb" id="1_tjn2e"]
 [ext_resource type="Script" uid="uid://bkqwkqwc1oqfm" path="res://vehicleMovement.gd" id="1_w0p2i"]
 [ext_resource type="PackedScene" uid="uid://u57kwnwxi64f" path="res://deer.glb" id="3_7a4el"]
+[ext_resource type="Script" uid="uid://c26lyl80xk4q5" path="res://CarX.gd" id="3_ywh4s"]
 [ext_resource type="Script" uid="uid://dg3ech4bnga6y" path="res://CarY.gd" id="4_kwhh3"]
 [ext_resource type="PackedScene" uid="uid://demfwwsq71dlj" path="res://chunk.tscn" id="5_4sclt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4sclt"]
+size = Vector3(1.1289063, 1.2470703, 2.7927246)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ywh4s"]
+size = Vector3(0.7851715, 0.74609375, 1.7667542)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ywh4s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ue4rx"]
-size = Vector3(37.07086, 1, 52.09616)
+size = Vector3(37.07086, 1.1923981, 52.09616)
 
 [node name="Node3D" type="RigidBody3D"]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
@@ -21,7 +24,7 @@ mass = 0.001
 gravity_scale = 0.0
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
-transform = Transform3D(1.0312464, 0, 0, 0, 1.0312464, 0, 0, 0, 1.0312464, -1.9318826, -0.40864334, 10.502142)
+transform = Transform3D(1.0312464, 0, 0, 0, 1.0312464, 0, 0, 0, 1.0312464, -1.9318826, -0.40864334, 10.873)
 collision_layer = 255
 collision_mask = 255
 script = ExtResource("1_w0p2i")
@@ -30,15 +33,16 @@ script = ExtResource("1_w0p2i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24886227, 0, 0)
 
 [node name="Sketchfab_Scene2" parent="VehicleBody3D/MeshInstance3D" instance=ExtResource("1_tjn2e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3085661, 2.4912415, -0.46528625)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.3085661, 2.4912415, -0.46528625)
+script = ExtResource("3_ywh4s")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D"]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 2.5332677, 0)
+transform = Transform3D(1.1337614, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -0.07307446, 3.0802534, -0.51501465)
 shape = SubResource("BoxShape3D_4sclt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1.4230824, 0.03362514, -0.12050988, 7.567929e-05, 1.3757795, 0.38476902, 0.12511304, -0.38329697, 1.3704914, 0.746337, 8.161341, 30.137363)
+transform = Transform3D(1.4285674, -0.0009905524, 0.0032608395, -0.0006464512, 1.2633163, 0.66696924, -0.0033460981, -0.6669689, 1.2633122, 0.746337, 10.046732, 19.185661)
 current = true
 fov = 49.2
 near = 0.25
@@ -65,11 +69,11 @@ collision_mask = 255
 [node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D2"]
 
 [node name="Sketchfab_Scene" parent="VehicleBody3D2/MeshInstance3D" instance=ExtResource("1_tjn2e")]
-transform = Transform3D(0.60661554, 0, 0, 0, 0.60661554, 0, 0, 0, 0.60661554, 1.0982537, 6.972545, 4.1940536)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.1674905, 6.972545, 4.3415384)
 script = ExtResource("4_kwhh3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.94240165, 7.158989, 4.5322776)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1692464, 7.344536, 4.328283)
 shape = SubResource("BoxShape3D_ywh4s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -78,7 +82,7 @@ collision_mask = 255
 physics_material_override = SubResource("PhysicsMaterial_ywh4s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, -5.1260585e-13, 0, 1, 0, 5.1260585e-13, 0, 1, 0.8855888, -0.43324438, -12.605758)
+transform = Transform3D(1, 0, -5.1260585e-13, 0, 1, 0, 5.1260585e-13, 0, 1, 0.8855888, 0.5672383, -12.605758)
 shape = SubResource("BoxShape3D_ue4rx")
 
 [node name="Node3D" parent="StaticBody3D" instance=ExtResource("5_4sclt")]
