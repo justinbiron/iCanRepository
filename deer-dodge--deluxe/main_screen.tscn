@@ -11,21 +11,19 @@
 [ext_resource type="Script" uid="uid://cmslcchujjyh3" path="res://DeerX.gd" id="8_0osx7"]
 [ext_resource type="Script" uid="uid://xdhdfy06ykn8" path="res://static_body_3d_2.gd" id="8_62wn8"]
 [ext_resource type="Script" uid="uid://dfpd33yqbpryw" path="res://DeerY.gd" id="9_62wn8"]
+[ext_resource type="PackedScene" uid="uid://3crbrcwhpyd0" path="res://Fabulous Borwo (1).glb" id="12_sj757"]
+[ext_resource type="Script" uid="uid://bn8h5gbnpr2l6" path="res://grid.gd" id="13_ups6l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4sclt"]
 size = Vector3(1.1289063, 1.2470703, 2.7927246)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ywh4s"]
-size = Vector3(0.7851715, 0.78082275, 1.7667542)
+size = Vector3(1.823681, 0.28572464, 1.7667542)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ywh4s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ue4rx"]
 size = Vector3(37.07086, 1.1923981, 73.10241)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4sv2p"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0osx7"]
 
 [node name="Node3D" type="RigidBody3D"]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
@@ -47,11 +45,15 @@ script = ExtResource("3_ywh4s")
 metadata/_edit_lock_ = true
 
 [node name="Camera3D" type="Camera3D" parent="VehicleBody3D/MeshInstance3D/Sketchfab_Scene2"]
-transform = Transform3D(1.7316025, -0.0012006726, 0.003952547, -0.0005882985, 1.5682837, 0.73413277, -0.0040887827, -0.73413205, 1.5682788, 3.3209674, 6.462075, 10.657596)
+transform = Transform3D(1.7316025, -0.0012006719, 0.0039525484, 0.00032327234, 1.6911556, 0.3721, -0.0041182204, -0.37209815, 1.6911507, 3.3209674, 6.4620733, 10.657596)
 current = true
 fov = 49.2
 near = 0.25
 script = ExtResource("6_ywh4s")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="VehicleBody3D/MeshInstance3D/Sketchfab_Scene2/Camera3D"]
+layers = 1023
+directional_shadow_max_distance = 268.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D"]
 transform = Transform3D(1.1337614, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -0.07307446, 3.7132168, -0.51501465)
@@ -69,7 +71,7 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.1674905, 6.972545, 4.
 script = ExtResource("4_kwhh3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1692464, 7.9635873, 4.328283)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1587768, 7.73294, 4.4026995)
 shape = SubResource("BoxShape3D_ywh4s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -99,27 +101,18 @@ shape = SubResource("BoxShape3D_ue4rx")
 [node name="Node3D" parent="StaticBody3D2" instance=ExtResource("5_4sclt")]
 transform = Transform3D(-2.5712579e-08, 0, 0.58823526, 0, 0.58823526, 0, -0.58823526, 0, -2.5712579e-08, 0.98262787, 0.5918981, 0.1701319)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
-gravity_scale = 0.0
-
-[node name="DeerX" parent="RigidBody3D" instance=ExtResource("7_4sv2p")]
-transform = Transform3D(2.5, 0, 4.3301277, 0, 5, 0, -4.3301277, 0, 2.5, -2.634, 3, -5)
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("7_4sv2p")]
+transform = Transform3D(7.0000005, 0, 0, 0, 7.0000005, 0, 0, 0, 7.0000005, -1.8098426, 7.587911, -28.908344)
 script = ExtResource("8_0osx7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0609188, 4.6445107, -20.88346)
-shape = SubResource("BoxShape3D_4sv2p")
-
-[node name="RigidBody3D2" type="RigidBody3D" parent="."]
-collision_layer = 255
-collision_mask = 255
-gravity_scale = 0.0
-
-[node name="DeerY" parent="RigidBody3D2" instance=ExtResource("7_4sv2p")]
-transform = Transform3D(2.5, 0, 4.3301277, 0, 5, 0, -4.3301277, 0, 2.5, 3.449, 3, -5)
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("7_4sv2p")]
+transform = Transform3D(7.0000005, 0, 0, 0, 7.0000005, 0, 0, 0, 7.0000005, 4.330159, 7.587911, -29.066496)
 script = ExtResource("9_62wn8")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9741368, 4.8990045, -20.891861)
-shape = SubResource("BoxShape3D_0osx7")
+[node name="Tinkercad GLTF Scene" parent="." instance=ExtResource("12_sj757")]
+transform = Transform3D(116.6439, 0, 0, 0, -4.37114e-06, -233.27234, 0, 100.00002, -1.0196658e-05, -6.16, 6.845159, -12)
+script = ExtResource("13_ups6l")
+
+[node name="Tinkercad GLTF Scene2" parent="." instance=ExtResource("12_sj757")]
+transform = Transform3D(116.6439, 0, 0, 0, -4.37114e-06, -233.27234, 0, 100.00002, -1.0196658e-05, 2.279142, 6.845107, -12)
+script = ExtResource("13_ups6l")

@@ -1,3 +1,8 @@
+res://DeerX.gd
 res://main_screen.tscn
-res://static_body_3d.gd
-res://static_body_3d_2.gd
+res://DeerY.gd
+res://CarX.gd
+res://CarY.gd
+res://GridX.gd
+res://GridY.gd
+res://grid.gd
