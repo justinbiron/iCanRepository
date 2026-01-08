@@ -1,3 +1,4 @@
+Label
 CanvasLayer
 RigidBody3D
 CollisionShape3D
@@ -12,4 +13,3 @@ MeshInstance3D
 Panel
 VBoxContainer
 Button
-CollisionShape3D

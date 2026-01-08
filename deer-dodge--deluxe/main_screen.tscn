@@ -135,3 +135,12 @@ script = ExtResource("13_ups6l")
 process_mode = 3
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("14_7sxnj")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="time" type="Label" parent="CanvasLayer2"]
+offset_left = 1048.0001
+offset_top = 47.000004
+offset_right = 1088.0001
+offset_bottom = 70.0
+scale = Vector2(16.295135, 20.604359)

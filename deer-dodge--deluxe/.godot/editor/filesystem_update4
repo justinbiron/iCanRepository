@@ -1,2 +1,5 @@
 res://main_screen.tscn
-res://pause_menu.gd
+res://Stopwatch.gd
+res://DeerX.gd
+res://DeerY.gd
+res://time_display.gd
