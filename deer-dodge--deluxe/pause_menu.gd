@@ -1,38 +1,33 @@
 extends Control
-@onready var optionsMenu = preload("res://pause_menu.tscn")
+
 func _ready():
-	$AnimationPlayer.play("RESET")
+	hide()
+	print("Pause menu loaded")
 
-func resume():
-	get_tree().paused = false
-	$AnimationPlayer.play_backwards("blur")
-
-func pause():
-	get_tree().paused = true
-	$AnimationPlayer.play("blur")
-
-func testEsc():
-	if Input.is_action_just_pressed("esc") and !get_tree().paused:
-		pause()
-	elif Input.is_action_just_pressed("esc") and get_tree().paused:
-		resume()
-
+func _input(event):
+	print("Input detected: ", event)
+	
+	if event is InputEventKey and event.pressed:
+		print("Key pressed: ", event.keycode)
+		
+		if event.keycode == KEY_ESCAPE:
+			print("ESCAPE detected!")
+			if visible:
+				hide()
+				get_tree().paused = false
+			else:
+				show()
+				get_tree().paused = true
+		
+		elif event.keycode == KEY_Y:
+			print("Y detected!")
+			show()
+			get_tree().paused = true
 
 func _on_resume_pressed():
-	resume()
-
+	hide()
+	get_tree().paused = false
+	print("Resume clicked")
 
 func _on_quit_pressed():
 	get_tree().quit()
-
-func _process(delta):
-	testEsc()
-
-
-func _on_options_pressed():
-	resume()
-	get_tree().change_scene_to_file("res://options_menu.tscn")
-
-
-func _on_restart_pressed() -> void:
-	pass # Replace with function body.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvl68ic3ulf6h"]
+[gd_scene load_steps=9 format=3 uid="uid://dvl68ic3ulf6h"]
 
 [ext_resource type="Script" uid="uid://o03ju5dsf6nd" path="res://pause_menu.gd" id="1_nwcfo"]
 [ext_resource type="Shader" uid="uid://bldr2fdv4efu1" path="res://bgshader.gdshader" id="2_05uyy"]
@@ -8,6 +8,18 @@ shader = ExtResource("2_05uyy")
 shader_parameter/lod = 0.0
 
 [sub_resource type="Theme" id="Theme_2nc7s"]
+
+[sub_resource type="FontFile" id="FontFile_nwcfo"]
+cache/0/11/0/ascent = 0.0
+cache/0/11/0/descent = 0.0
+cache/0/11/0/underline_position = 0.0
+cache/0/11/0/underline_thickness = 0.0
+cache/0/11/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [sub_resource type="Animation" id="Animation_d3xb4"]
 resource_name = "blur"
@@ -83,10 +95,13 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 2
 
 [node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_2nc7s")
+theme_override_fonts/font = SubResource("FontFile_nwcfo")
+theme_override_font_sizes/font_size = 11
 text = "Resume"
 
 [node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
@@ -106,5 +121,4 @@ libraries = {
 }
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
