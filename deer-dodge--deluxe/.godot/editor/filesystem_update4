@@ -1,12 +1,3 @@
-<<<<<<< HEAD
 res://main_screen.tscn
-res://health.gd
-res://global.gd
 res://DeerX.gd
-res://CarY.gd
 res://DeerY.gd
-=======
-res://bgshader.gdshader
-res://pause_menu.gd
-res://pause_menu.tscn
->>>>>>> 2be3fa6b82287a30b30c74d7057b3204fc1df62f

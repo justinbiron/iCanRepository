@@ -53,9 +53,9 @@ func _physics_process(delta: float) -> void:
 
 func _input(event):
 	if not is_dropped:  # Only allow controls if not dropped
-		if event.is_action_pressed("DeerX_Left"):
+		if event.is_action_pressed("DeerY_Left"):
 			_move_left()
-		elif event.is_action_pressed("DeerX_Right"):
+		elif event.is_action_pressed("DeerY_Right"):
 			_move_right()
 		elif event.is_action_pressed("DeerY_Drop"):
 			_drop_deer()
