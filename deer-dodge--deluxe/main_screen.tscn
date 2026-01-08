@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bbw7n2hshocvo"]
+[gd_scene load_steps=19 format=3 uid="uid://bbw7n2hshocvo"]
 
 [ext_resource type="PackedScene" uid="uid://e88cbc7elxeg" path="res://pixel_car.glb" id="1_tjn2e"]
 [ext_resource type="Script" uid="uid://bkqwkqwc1oqfm" path="res://vehicleMovement.gd" id="1_w0p2i"]
@@ -24,6 +24,8 @@ size = Vector3(1.823681, 0.28572464, 1.7667542)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ue4rx"]
 size = Vector3(37.07086, 1.1923981, 73.10241)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ups6l"]
 
 [node name="Node3D" type="RigidBody3D"]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
@@ -101,13 +103,24 @@ shape = SubResource("BoxShape3D_ue4rx")
 [node name="Node3D" parent="StaticBody3D2" instance=ExtResource("5_4sclt")]
 transform = Transform3D(-2.5712579e-08, 0, 0.58823526, 0, 0.58823526, 0, -0.58823526, 0, -2.5712579e-08, 0.98262787, 0.5918981, 0.1701319)
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("7_4sv2p")]
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 255
+collision_mask = 255
+gravity_scale = 0.0
+
+[node name="DeerX" parent="RigidBody3D" instance=ExtResource("7_4sv2p")]
 transform = Transform3D(7.0000005, 0, 0, 0, 7.0000005, 0, 0, 0, 7.0000005, -1.8098426, 7.587911, -28.908344)
 script = ExtResource("8_0osx7")
 
-[node name="Sketchfab_Scene2" parent="." instance=ExtResource("7_4sv2p")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(2.2725866, 0, 0, 0, 2.2725866, 0, 0, 0, 2.2725866, -1.81939, 3.008649, -27.405241)
+shape = SubResource("BoxShape3D_ups6l")
+
+[node name="DeerY" parent="." instance=ExtResource("7_4sv2p")]
 transform = Transform3D(7.0000005, 0, 0, 0, 7.0000005, 0, 0, 0, 7.0000005, 4.330159, 7.587911, -29.066496)
 script = ExtResource("9_62wn8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeerY"]
 
 [node name="Tinkercad GLTF Scene" parent="." instance=ExtResource("12_sj757")]
 transform = Transform3D(116.6439, 0, 0, 0, -4.37114e-06, -233.27234, 0, 100.00002, -1.0196658e-05, -6.16, 6.845159, -12)

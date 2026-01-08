@@ -1,8 +1,6 @@
-res://DeerX.gd
 res://main_screen.tscn
-res://DeerY.gd
-res://CarX.gd
+res://health.gd
+res://global.gd
+res://DeerX.gd
 res://CarY.gd
-res://GridX.gd
-res://GridY.gd
-res://grid.gd
+res://DeerY.gd

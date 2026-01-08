@@ -1,11 +1,11 @@
+RigidBody3D
+CollisionShape3D
 VehicleBody3D
 DirectionalLight3D
 MeshInstance3D
 Panel
 VBoxContainer
 Button
-CollisionShape3D
-RigidBody3D
 Camera3D
 StaticBody3D
 Node3D
