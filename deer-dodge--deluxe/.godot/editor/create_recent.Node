@@ -1,25 +1,15 @@
-<<<<<<< HEAD
+CanvasLayer
 RigidBody3D
 CollisionShape3D
-=======
 ColorRect
 AnimationPlayer
 Button
 VBoxContainer
 PanelContainer
->>>>>>> 2be3fa6b82287a30b30c74d7057b3204fc1df62f
 VehicleBody3D
 DirectionalLight3D
 MeshInstance3D
 Panel
-<<<<<<< HEAD
 VBoxContainer
 Button
-=======
 CollisionShape3D
-RigidBody3D
->>>>>>> 2be3fa6b82287a30b30c74d7057b3204fc1df62f
-Camera3D
-StaticBody3D
-Node3D
-Marker3D

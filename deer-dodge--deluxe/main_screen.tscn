@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bbw7n2hshocvo"]
+[gd_scene load_steps=20 format=3 uid="uid://bbw7n2hshocvo"]
 
 [ext_resource type="PackedScene" uid="uid://e88cbc7elxeg" path="res://pixel_car.glb" id="1_tjn2e"]
 [ext_resource type="Script" uid="uid://bkqwkqwc1oqfm" path="res://vehicleMovement.gd" id="1_w0p2i"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://dfpd33yqbpryw" path="res://DeerY.gd" id="9_62wn8"]
 [ext_resource type="PackedScene" uid="uid://3crbrcwhpyd0" path="res://Fabulous Borwo (1).glb" id="12_sj757"]
 [ext_resource type="Script" uid="uid://bn8h5gbnpr2l6" path="res://grid.gd" id="13_ups6l"]
+[ext_resource type="PackedScene" uid="uid://dvl68ic3ulf6h" path="res://pause_menu.tscn" id="14_7sxnj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4sclt"]
 size = Vector3(1.1289063, 1.2470703, 2.7927246)
@@ -129,3 +130,8 @@ script = ExtResource("13_ups6l")
 [node name="Tinkercad GLTF Scene2" parent="." instance=ExtResource("12_sj757")]
 transform = Transform3D(116.6439, 0, 0, 0, -4.37114e-06, -233.27234, 0, 100.00002, -1.0196658e-05, 2.279142, 6.845107, -12)
 script = ExtResource("13_ups6l")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("14_7sxnj")]

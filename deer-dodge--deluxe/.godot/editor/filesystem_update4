@@ -1,3 +1,2 @@
 res://main_screen.tscn
-res://DeerX.gd
-res://DeerY.gd
+res://pause_menu.gd
