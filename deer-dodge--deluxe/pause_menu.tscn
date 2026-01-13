@@ -1,62 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvl68ic3ulf6h"]
+[gd_scene load_steps=3 format=3 uid="uid://dvl68ic3ulf6h"]
 
 [ext_resource type="Script" uid="uid://o03ju5dsf6nd" path="res://pause_menu.gd" id="1_nwcfo"]
-[ext_resource type="Shader" uid="uid://bldr2fdv4efu1" path="res://bgshader.gdshader" id="2_05uyy"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p81d2"]
-shader = ExtResource("2_05uyy")
-shader_parameter/lod = 0.0
-
-[sub_resource type="Theme" id="Theme_2nc7s"]
-
-[sub_resource type="FontFile" id="FontFile_nwcfo"]
-cache/0/11/0/ascent = 0.0
-cache/0/11/0/descent = 0.0
-cache/0/11/0/underline_position = 0.0
-cache/0/11/0/underline_thickness = 0.0
-cache/0/11/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
-[sub_resource type="Animation" id="Animation_d3xb4"]
-resource_name = "blur"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.850000040375]
-}
-
-[sub_resource type="Animation" id="Animation_mxa3g"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_e8sti"]
-_data = {
-&"RESET": SubResource("Animation_mxa3g"),
-&"blur": SubResource("Animation_d3xb4")
-}
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdmo1"]
+bg_color = Color(0.15350077, 0.68556106, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 10
+shadow_offset = Vector2(1, 3)
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -67,58 +20,51 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nwcfo")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_p81d2")
-layout_mode = 0
-offset_left = -1.0
-offset_right = 69.0
-offset_bottom = 101.0
-scale = Vector2(16.64, 6.439999)
-
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.4765625
-anchor_top = 0.49228394
-anchor_right = 0.4765625
-anchor_bottom = 0.49228394
-offset_left = -249.0
-offset_top = -213.0
-offset_right = -179.0
-offset_bottom = -112.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -105.0
+offset_right = 181.0
+offset_bottom = 105.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(8.371886, 4.37728)
-metadata/_edit_use_anchors_ = true
+theme_override_constants/separation = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+[node name="Resume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.903319, 0.84788656, 0.96933955, 1)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdmo1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdmo1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hdmo1")
+text = "RESUME"
 
-[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Restart" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_2nc7s")
-theme_override_fonts/font = SubResource("FontFile_nwcfo")
-theme_override_font_sizes/font_size = 11
-text = "Resume"
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.903319, 0.84788656, 0.96933955, 1)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdmo1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdmo1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hdmo1")
+text = "RESTART"
 
-[node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_2nc7s")
-text = "Restart"
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.903319, 0.84788656, 0.96933955, 1)
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdmo1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hdmo1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hdmo1")
+text = "QUIT"
 
-[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
-process_mode = 3
-layout_mode = 2
-theme = SubResource("Theme_2nc7s")
-text = "Quit"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_e8sti")
-}
-
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
