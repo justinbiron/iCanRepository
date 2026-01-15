@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bbw7n2hshocvo"]
+[gd_scene load_steps=21 format=3 uid="uid://bbw7n2hshocvo"]
 
 [ext_resource type="PackedScene" uid="uid://e88cbc7elxeg" path="res://pixel_car.glb" id="1_tjn2e"]
 [ext_resource type="Script" uid="uid://bkqwkqwc1oqfm" path="res://vehicleMovement.gd" id="1_w0p2i"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://3crbrcwhpyd0" path="res://Fabulous Borwo (1).glb" id="12_sj757"]
 [ext_resource type="Script" uid="uid://bn8h5gbnpr2l6" path="res://grid.gd" id="13_ups6l"]
 [ext_resource type="PackedScene" uid="uid://dvl68ic3ulf6h" path="res://pause_menu.tscn" id="14_7sxnj"]
+[ext_resource type="Texture2D" uid="uid://ccruwbl6lille" path="res://heart.png" id="15_cxp7d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4sclt"]
 size = Vector3(1.1289063, 1.2470703, 2.7927246)
@@ -144,3 +145,30 @@ offset_top = 47.000004
 offset_right = 1088.0001
 offset_bottom = 70.0
 scale = Vector2(16.295135, 20.604359)
+
+[node name="heart_bar" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="heart_bar"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.080000505, 0.07999949)
+
+[node name="heart" type="TextureRect" parent="heart_bar/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_cxp7d")
+
+[node name="heart2" type="TextureRect" parent="heart_bar/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_cxp7d")
+
+[node name="heart3" type="TextureRect" parent="heart_bar/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_cxp7d")
+
+[node name="heart4" type="TextureRect" parent="heart_bar/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_cxp7d")
+
+[node name="heart5" type="TextureRect" parent="heart_bar/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_cxp7d")

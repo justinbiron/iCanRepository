@@ -1,5 +1,7 @@
-Label
+TextureRect
+HBoxContainer
 CanvasLayer
+Label
 RigidBody3D
 CollisionShape3D
 ColorRect
@@ -11,5 +13,3 @@ VehicleBody3D
 DirectionalLight3D
 MeshInstance3D
 Panel
-VBoxContainer
-Button
