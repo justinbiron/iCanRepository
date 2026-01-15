@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 res://Stopwatch2.gd
 res://main_screen.tscn
 res://DeerX.gd
-=======
 res://pause_menu.gd
-res://pause_menu.tscn
-res://bgshader.gdshader
->>>>>>> 2fc3d09143a92d57b63e31cf6205c5b5ddcbecf1
