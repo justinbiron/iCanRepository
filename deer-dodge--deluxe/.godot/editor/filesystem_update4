@@ -1,5 +1,3 @@
+res://Stopwatch2.gd
 res://main_screen.tscn
-res://Stopwatch.gd
 res://DeerX.gd
-res://DeerY.gd
-res://time_display.gd

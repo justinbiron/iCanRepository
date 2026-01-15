@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 global="*res://global.gd"
 health="*res://health.gd"
 Stopwatch="*res://Stopwatch.gd"
+Stopwatch2="*res://Stopwatch2.gd"
 
 [dotnet]
 

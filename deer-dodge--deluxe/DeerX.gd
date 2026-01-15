@@ -57,7 +57,7 @@ func _input(event):
 			_move_left()
 		elif event.is_action_pressed("DeerY_Right"):
 			_move_right()
-		elif event.is_action_pressed("DeerY_Drop") and Stopwatch.time > 4:
+		elif event.is_action_pressed("DeerY_Drop") and Stopwatch2.time2 > 4:
 			_drop_deer()
 
 func _move_left():
@@ -91,7 +91,7 @@ func _drop_deer():
 	# Add collision detection for the dropped deer
 	_setup_collision(dropped_deer)
 	
-	Stopwatch.time = 0
+	Stopwatch2.time2 = 0
 
 func _setup_collision(deer):
 	# Add Area3D for collision detection
