@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dprlilqxy5hof"]
+[gd_scene load_steps=7 format=3 uid="uid://dprlilqxy5hof"]
 
 [ext_resource type="Texture2D" uid="uid://di84c153g2j20" path="res://Screenshot 2025-10-30.png" id="1_fu7sn"]
 [ext_resource type="Script" uid="uid://kgc1sbige3va" path="res://main_menu.gd" id="1_jix8l"]
 [ext_resource type="Texture2D" uid="uid://db0mve2jt42ds" path="res://DEER DOGE 5.jpg" id="2_jix8l"]
 [ext_resource type="Texture2D" uid="uid://e60k2ujropg4" path="res://Screenshot 2025-10-30 191036.png" id="3_glbon"]
+[ext_resource type="Script" uid="uid://ormexyovvsaw" path="res://button.gd" id="5_glbon"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
 bg_color = Color(0.15350077, 0.68556106, 0, 1)
@@ -77,6 +78,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rhts7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rhts7")
 text = "START GAME"
+script = ExtResource("5_glbon")
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
