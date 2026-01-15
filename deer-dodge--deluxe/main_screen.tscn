@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bbw7n2hshocvo"]
+[gd_scene load_steps=23 format=3 uid="uid://bbw7n2hshocvo"]
 
 [ext_resource type="PackedScene" uid="uid://e88cbc7elxeg" path="res://pixel_car.glb" id="1_tjn2e"]
 [ext_resource type="Script" uid="uid://bkqwkqwc1oqfm" path="res://vehicleMovement.gd" id="1_w0p2i"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://bn8h5gbnpr2l6" path="res://grid.gd" id="13_ups6l"]
 [ext_resource type="PackedScene" uid="uid://dvl68ic3ulf6h" path="res://pause_menu.tscn" id="14_7sxnj"]
 [ext_resource type="Texture2D" uid="uid://ccruwbl6lille" path="res://heart.png" id="15_cxp7d"]
+[ext_resource type="Script" uid="uid://fc4ck0w75f3c" path="res://label.gd" id="15_p3r6q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4sclt"]
 size = Vector3(1.1289063, 2.6158447, 2.7927246)
@@ -152,8 +153,14 @@ scale = Vector2(16.295135, 20.604359)
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer3"]
-offset_right = 40.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
 offset_bottom = 23.0
+grow_horizontal = 2
+script = ExtResource("15_p3r6q")
 
 [node name="heart_bar" type="CanvasLayer" parent="."]
 
