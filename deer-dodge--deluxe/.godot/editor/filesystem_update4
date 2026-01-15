@@ -1,2 +1,4 @@
 res://main_screen.tscn
 res://label.gd
+res://heart_bar_x.gd
+res://heart_bar_y.gd

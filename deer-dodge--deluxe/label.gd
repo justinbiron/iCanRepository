@@ -1,7 +1,7 @@
 extends Label
 
 var elapsed_time: float = 0.0
-var display_speed: float = 3.0  # Multiplier for visual speed (3x faster display)
+var display_speed: float = 10.0  # Multiplier for visual speed (3x faster display)
 
 func _ready():
 	# Start counting from when the game begins
