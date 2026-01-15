@@ -10,7 +10,9 @@ extends Node3D
 @export var start_z: float = 10.2               # Where the car starts on the Z axis
 @export var z_offset: float = 0.0              # Shifts the whole lane system forward/backward
 
-var current_lane: int
+var health_CarX: int = 5
+
+@export var current_lane: int
 var target_x: float = 0.0
 
 func _ready():
@@ -59,3 +61,7 @@ func _update_target_position():
 	# Center lanes around X = lane_center_offset
 	var leftmost_x = lane_center_offset - ((lane_count - 1) * lane_distance) / 2.0
 	target_x = leftmost_x + (current_lane * lane_distance)
+	
+func take_damage(amount: int):
+	health_CarX -= amount
+	print("Car health:", health_CarX)

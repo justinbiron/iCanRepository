@@ -10,7 +10,7 @@ extends Node3D
 @export var ground_y: float = 2.3              # Y position where deer stops falling (road level)
 @export var fall_speed: float = 9.8            # How fast the deer falls
 
-var current_lane: int
+@export var current_lane: int
 var target_x: float = 0.0
 var is_dropped: bool = false  # Track if this is a dropped deer
 

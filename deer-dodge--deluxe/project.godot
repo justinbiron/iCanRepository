@@ -21,6 +21,10 @@ global="*res://global.gd"
 health="*res://health.gd"
 Stopwatch="*res://Stopwatch.gd"
 Stopwatch2="*res://Stopwatch2.gd"
+CurrentLaneCarX="*res://current_lane_carX.gd"
+CurrentLaneCarY="*res://current_lane_carY.gd"
+CurrentLaneDeerX="*res://current_lane_deerX.gd"
+CurrentLaneDeerY="*res://current_lane_deerY.gd"
 
 [dotnet]
 

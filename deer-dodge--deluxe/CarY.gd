@@ -8,7 +8,7 @@ extends Node3D
 @export var lane_center_offset: float = 4.85   # Shifts all lanes left/right in world space
 @export var z_offset: float = 5.55              # Shifts car forward/backward in world space
 
-var current_lane: int
+@export var current_lane: int
 var target_x: float = 0.0
 
 func _ready():

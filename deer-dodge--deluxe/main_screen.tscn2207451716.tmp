@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bbw7n2hshocvo"]
+[gd_scene load_steps=23 format=3 uid="uid://bbw7n2hshocvo"]
 
 [ext_resource type="PackedScene" uid="uid://e88cbc7elxeg" path="res://pixel_car.glb" id="1_tjn2e"]
 [ext_resource type="Script" uid="uid://bkqwkqwc1oqfm" path="res://vehicleMovement.gd" id="1_w0p2i"]
@@ -11,13 +11,11 @@
 [ext_resource type="Script" uid="uid://cmslcchujjyh3" path="res://DeerX.gd" id="8_0osx7"]
 [ext_resource type="Script" uid="uid://xdhdfy06ykn8" path="res://static_body_3d_2.gd" id="8_62wn8"]
 [ext_resource type="Script" uid="uid://dfpd33yqbpryw" path="res://DeerY.gd" id="9_62wn8"]
+[ext_resource type="Script" uid="uid://bqogw0buw3nkr" path="res://collisionDeerX.gd" id="11_p3r6q"]
 [ext_resource type="PackedScene" uid="uid://3crbrcwhpyd0" path="res://Fabulous Borwo (1).glb" id="12_sj757"]
 [ext_resource type="Script" uid="uid://bn8h5gbnpr2l6" path="res://grid.gd" id="13_ups6l"]
 [ext_resource type="PackedScene" uid="uid://dvl68ic3ulf6h" path="res://pause_menu.tscn" id="14_7sxnj"]
 [ext_resource type="Texture2D" uid="uid://ccruwbl6lille" path="res://heart.png" id="15_cxp7d"]
-[ext_resource type="Script" uid="uid://fc4ck0w75f3c" path="res://label.gd" id="15_p3r6q"]
-[ext_resource type="Script" uid="uid://c2w2nyt2sq8wy" path="res://heart_bar_x.gd" id="16_3qsiq"]
-[ext_resource type="Script" uid="uid://ds72t5hcb4kki" path="res://heart_bar_y.gd" id="18_7087c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4sclt"]
 size = Vector3(1.1289063, 2.6158447, 2.7927246)
@@ -33,11 +31,6 @@ size = Vector3(37.07086, 1.1923981, 73.10241)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ups6l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cxp7d"]
-
-[sub_resource type="Environment" id="Environment_7087c"]
-background_mode = 1
-background_color = Color(1, 1, 0.41960785, 1)
-background_energy_multiplier = 1.45
 
 [node name="Node3D" type="RigidBody3D"]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
@@ -122,6 +115,7 @@ script = ExtResource("8_0osx7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(2.2725866, 0, 0, 0, 2.2725866, 0, 0, 0, 2.2725866, -1.9460938, 6.9926515, -26.915396)
 shape = SubResource("BoxShape3D_ups6l")
+script = ExtResource("11_p3r6q")
 
 [node name="DeerY" parent="." instance=ExtResource("7_4sv2p")]
 transform = Transform3D(7.0000005, 0, 0, 0, 7.0000005, 0, 0, 0, 7.0000005, 4.330159, 7.587911, -29.066496)
@@ -155,71 +149,32 @@ scale = Vector2(16.295135, 20.604359)
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer3"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
+offset_right = 40.0
 offset_bottom = 23.0
-grow_horizontal = 2
-script = ExtResource("15_p3r6q")
 
-[node name="heart_barX" type="CanvasLayer" parent="."]
-script = ExtResource("16_3qsiq")
+[node name="heart_bar" type="CanvasLayer" parent="."]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="heart_barX"]
+[node name="HBoxContainer" type="HBoxContainer" parent="heart_bar"]
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.080000505, 0.07999949)
 
-[node name="heart" type="TextureRect" parent="heart_barX/HBoxContainer"]
+[node name="heart" type="TextureRect" parent="heart_bar/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("15_cxp7d")
 
-[node name="heart2" type="TextureRect" parent="heart_barX/HBoxContainer"]
+[node name="heart2" type="TextureRect" parent="heart_bar/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("15_cxp7d")
 
-[node name="heart3" type="TextureRect" parent="heart_barX/HBoxContainer"]
+[node name="heart3" type="TextureRect" parent="heart_bar/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("15_cxp7d")
 
-[node name="heart4" type="TextureRect" parent="heart_barX/HBoxContainer"]
+[node name="heart4" type="TextureRect" parent="heart_bar/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("15_cxp7d")
 
-[node name="heart5" type="TextureRect" parent="heart_barX/HBoxContainer"]
+[node name="heart5" type="TextureRect" parent="heart_bar/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("15_cxp7d")
-
-[node name="heart_barY" type="CanvasLayer" parent="."]
-script = ExtResource("18_7087c")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="heart_barY"]
-offset_left = 913.0
-offset_right = 3829.0
-offset_bottom = 580.0
-scale = Vector2(0.080000505, 0.07999949)
-
-[node name="heart" type="TextureRect" parent="heart_barY/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("15_cxp7d")
-
-[node name="heart2" type="TextureRect" parent="heart_barY/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("15_cxp7d")
-
-[node name="heart3" type="TextureRect" parent="heart_barY/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("15_cxp7d")
-
-[node name="heart4" type="TextureRect" parent="heart_barY/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("15_cxp7d")
-
-[node name="heart5" type="TextureRect" parent="heart_barY/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("15_cxp7d")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_7087c")
