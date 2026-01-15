@@ -1,7 +1,7 @@
+Label
+CanvasLayer
 TextureRect
 HBoxContainer
-CanvasLayer
-Label
 RigidBody3D
 CollisionShape3D
 ColorRect
@@ -12,4 +12,3 @@ PanelContainer
 VehicleBody3D
 DirectionalLight3D
 MeshInstance3D
-Panel
