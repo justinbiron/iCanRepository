@@ -91,7 +91,7 @@ func _drop_deer():
 	# Add collision detection for the dropped deer
 	_setup_collision(dropped_deer)
 	
-	Cooldown.time = 4
+	Cooldown.time = 2
 
 	
 
@@ -135,9 +135,9 @@ func _process(delta):
 
 func check_lane_and_damage():
 	if CurrentLaneDeerY.DeerY_lane == CurrentLaneCarY.carY_lane \
-	and Cooldown.time < 3.3 \
-	and Cooldown.time > 3 \
-	and TimeAfterDamageY.time_post_damageY > 4:
+	and Cooldown.time < 1.3 \
+	and Cooldown.time > 1 \
+	and TimeAfterDamageY.time_post_damageY > 1:
 		CarYHealth.health -= 1
 		TimeAfterDamageY.time_post_damageY = 0
 		print("car Y health:", CarYHealth.health)

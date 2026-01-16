@@ -1,6 +1,6 @@
 extends Node
 # At the top with your other variables:
-var time2: float = 4.0
+var time2: float = 2.0
 var time_accumulator2: float = 0.0
 @onready var time_label2 = $CanvasLayer2/tim
 
