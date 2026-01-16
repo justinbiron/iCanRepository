@@ -1,10 +1,1 @@
-res://main_screen.tscn
-<<<<<<< HEAD
-res://Cooldown2.gd
-res://Cooldown.gd
-res://DeerX.gd
-res://DeerY.gd
-=======
-res://static_body_3d.gd
-res://static_body_3d_2.gd
->>>>>>> 169be902f4011fe187d55e58c35c9cebceba68e2
+res://pause_menu.tscn
