@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 	if time_accumulator2 >= 0.1:
 		time2 -= 0.1
 		time_accumulator2 -= 0.1
-		print ("Time2: ", time2)
+		#print ("Time2: ", time2)
 
 	
 	# ... rest of your code
