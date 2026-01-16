@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bbw7n2hshocvo"]
+[gd_scene load_steps=29 format=3 uid="uid://bbw7n2hshocvo"]
 
 [ext_resource type="Script" uid="uid://ca0qi6ee2ad8u" path="res://heart_updater.gd" id="1_do8p6"]
 [ext_resource type="PackedScene" uid="uid://e88cbc7elxeg" path="res://pixel_car.glb" id="1_tjn2e"]
@@ -20,7 +20,6 @@
 [ext_resource type="Script" uid="uid://c2w2nyt2sq8wy" path="res://heart_bar_x.gd" id="16_3qsiq"]
 [ext_resource type="Script" uid="uid://ds72t5hcb4kki" path="res://heart_bar_y.gd" id="18_7087c"]
 [ext_resource type="Script" uid="uid://b2vapw3g3gix1" path="res://endscreen.gd" id="20_qx06n"]
-[ext_resource type="Script" uid="uid://xavic4rx0dki" path="res://restart.gd" id="20_sqqhh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4sclt"]
 size = Vector3(1.1289063, 2.6158447, 2.7927246)
@@ -238,6 +237,7 @@ texture = ExtResource("15_cxp7d")
 environment = SubResource("Environment_7087c")
 
 [node name="Endscreen" type="CanvasLayer" parent="."]
+process_mode = 3
 script = ExtResource("20_qx06n")
 
 [node name="WinnerLabel" type="Label" parent="Endscreen"]
@@ -267,7 +267,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="RestartButton" type="Button" parent="Endscreen/VBoxContainer"]
+[node name="restartend" type="Button" parent="Endscreen/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.903319, 0.84788656, 0.96933955, 1)
@@ -276,9 +276,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qx06n")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qx06n")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qx06n")
 text = "RESTART"
-script = ExtResource("20_sqqhh")
 
-[node name="QuitButton" type="Button" parent="Endscreen/VBoxContainer"]
+[node name="backmainmenu" type="Button" parent="Endscreen/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.903319, 0.84788656, 0.96933955, 1)
@@ -288,5 +287,5 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qx06n")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qx06n")
 text = "QUIT"
 
-[connection signal="pressed" from="Endscreen/VBoxContainer/RestartButton" to="Endscreen" method="_on_restart_button_pressed"]
-[connection signal="pressed" from="Endscreen/VBoxContainer/QuitButton" to="Endscreen" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Endscreen/VBoxContainer/restartend" to="Endscreen" method="_on_restartend_pressed"]
+[connection signal="pressed" from="Endscreen/VBoxContainer/backmainmenu" to="Endscreen" method="_on_backmainmenu_pressed"]

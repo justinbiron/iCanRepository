@@ -31,3 +31,7 @@ func update_heart_bar(heart_bar: HBoxContainer, health: int):
 	for i in range(hearts.size()):
 		if hearts[i] is TextureRect:
 			hearts[i].visible = (i < health)
+
+
+func _on_quit_button_pressed() -> void:
+	pass # Replace with function body.

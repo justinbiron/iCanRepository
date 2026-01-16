@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvl68ic3ulf6h"]
+[gd_scene load_steps=3 format=3 uid="uid://dvl68ic3ulf6h"]
 
 [ext_resource type="Script" uid="uid://o03ju5dsf6nd" path="res://pause_menu.gd" id="1_nwcfo"]
-[ext_resource type="Script" uid="uid://dy0ceyic7l346" path="res://resume.gd" id="2_nwcfo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdmo1"]
 bg_color = Color(0.15350077, 0.68556106, 0, 1)
@@ -45,7 +44,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_hdmo1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hdmo1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hdmo1")
 text = "RESUME"
-script = ExtResource("2_nwcfo")
 
 [node name="Restart" type="Button" parent="VBoxContainer"]
 layout_mode = 2

@@ -131,8 +131,6 @@ func _on_deer_hit_car(body, deer):
 
 func _process(delta):
 	check_lane_and_damage()
-	if CarXHealth.health == 0:
-		GlobalSpeed.forward_speed = 0
 
 func check_lane_and_damage():
 	if CurrentLaneDeerX.DeerX_lane == CurrentLaneCarX.carX_lane \
