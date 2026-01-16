@@ -3,38 +3,50 @@ extends CanvasLayer
 # References to health nodes
 @onready var car_x_health = CarXHealth
 @onready var car_y_health = CarYHealth
-
-# UI Elements (create these in your CanvasLayer)
-
 @onready var winner_label = $WinnerLabel  # Label showing who won
-@onready var restart_button = $RestartButton  # Button to restart
-@onready var quit_button = $QuitButton  # Button to quit
+
+var game_ended = false  # Flag to prevent checking after game ends
 
 func _ready():
-	# Hide end screen at start
-	visible = false
+	hide()
+	game_ended = false  # Reset flag when scene loads
 
 func _process(_delta):
+	# Only check if game hasn't ended yet
+	if game_ended:
+		return
+		
 	# Check if either car has lost all health
 	if car_x_health.health <= 0:
+		get_tree().paused = true
 		show_end_screen("Car Y Wins!")
+		$VBoxContainer/restartend.grab_focus()
 	elif car_y_health.health <= 0:
+		get_tree().paused = true
 		show_end_screen("Car X Wins!")
+		$VBoxContainer/restartend.grab_focus()
 
 func show_end_screen(winner_text: String):
 	# Show the end screen
-	visible = true
+	show()
 	winner_label.text = winner_text
+	game_ended = true
 	
 	# Stop processing this check
 	set_process(false)
 
-func _on_restart_button_pressed():
-	# Restart the current scene
+func _on_backmainmenu_pressed():
+	get_tree().quit()
+	
+func _on_restartend_pressed():
+	# IMPORTANT: Reset health values before restarting
+	CarXHealth.health = 5
+	CarYHealth.health = 5
+	
+	# Unpause and restart
+	get_tree().paused = false
 	get_tree().reload_current_scene()
+	print("Restart clicked")
 
-func _on_quit_button_pressed():
-	# Quit to main menu or quit game
-	get_tree().change_scene_to_file("res://main_menu.tscn")  # Adjust path
-	# Or to quit the game entirely:
-	# get_tree().quit()
+func _on_quit_button_pressed() -> void:
+	pass # Replace with function body.

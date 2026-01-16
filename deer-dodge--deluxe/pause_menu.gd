@@ -15,14 +15,17 @@ func _input(event):
 			if visible:
 				hide()
 				get_tree().paused = false
+				$VBoxContainer/Resume.grab_focus()
 			else:
 				show()
 				get_tree().paused = true
+				$VBoxContainer/Resume.grab_focus()
 		
 		elif event.keycode == KEY_Y:
 			print("Y detected!")
 			show()
 			get_tree().paused = true
+			$VBoxContainer/Resume.grab_focus()
 
 func _on_resume_pressed():
 	hide()
