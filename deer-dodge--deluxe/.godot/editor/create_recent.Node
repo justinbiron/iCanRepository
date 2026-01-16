@@ -1,3 +1,4 @@
+Panel
 Label
 CanvasLayer
 WorldEnvironment
@@ -11,4 +12,3 @@ Button
 VBoxContainer
 PanelContainer
 VehicleBody3D
-DirectionalLight3D

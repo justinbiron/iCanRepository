@@ -19,11 +19,11 @@ func _process(_delta):
 	# Check if either car has lost all health
 	if car_x_health.health <= 0:
 		get_tree().paused = true
-		show_end_screen("Car Y Wins!")
+		show_end_screen("PLAYER 2 WINS!")
 		$VBoxContainer/restartend.grab_focus()
 	elif car_y_health.health <= 0:
 		get_tree().paused = true
-		show_end_screen("Car X Wins!")
+		show_end_screen("PLAYER 1 WINS!")
 		$VBoxContainer/restartend.grab_focus()
 
 func show_end_screen(winner_text: String):

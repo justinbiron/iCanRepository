@@ -227,10 +227,16 @@ texture = ExtResource("15_cxp7d")
 script = ExtResource("18_7087c")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="heart_barY"]
-offset_left = 913.0
-offset_right = 3829.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -2916.0
 offset_bottom = 580.0
+grow_horizontal = 0
 scale = Vector2(0.080000505, 0.07999949)
+pivot_offset = Vector2(2919.2686, 0)
+size_flags_horizontal = 3
+alignment = 2
 
 [node name="heart" type="TextureRect" parent="heart_barY/HBoxContainer"]
 layout_mode = 2
@@ -258,6 +264,20 @@ environment = SubResource("Environment_7087c")
 [node name="Endscreen" type="CanvasLayer" parent="."]
 process_mode = 3
 script = ExtResource("20_qx06n")
+
+[node name="Panel" type="Panel" parent="Endscreen"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 106.0
+offset_right = 20.0
+offset_bottom = 146.0
+grow_horizontal = 2
+scale = Vector2(8.81752, 2.6665754)
+pivot_offset = Vector2(20.064754, 19.789242)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="WinnerLabel" type="Label" parent="Endscreen"]
 anchors_preset = 5
