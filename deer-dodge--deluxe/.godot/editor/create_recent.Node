@@ -1,6 +1,6 @@
-WorldEnvironment
 Label
 CanvasLayer
+WorldEnvironment
 TextureRect
 HBoxContainer
 RigidBody3D
@@ -12,4 +12,3 @@ VBoxContainer
 PanelContainer
 VehicleBody3D
 DirectionalLight3D
-MeshInstance3D
