@@ -31,7 +31,7 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	# --- Move forward automatically ---
-	translate(Vector3(0, 0, -global.forward_speed * delta))
+	translate(Vector3(0, 0, -GlobalSpeed.forward_speed * delta))
 
 	# --- Smoothly slide toward the target lane position ---
 	var pos = global_transform.origin

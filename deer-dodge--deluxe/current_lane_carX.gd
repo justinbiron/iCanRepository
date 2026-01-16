@@ -7,4 +7,4 @@ func _input(event):
 		carX_lane -= 1
 	elif event.is_action_pressed("CarX_Right") and carX_lane < 3:
 		carX_lane += 1
-	print("CARX: "+ str(carX_lane))
+	#print("CARX: "+ str(carX_lane))

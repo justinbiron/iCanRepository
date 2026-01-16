@@ -14,6 +14,7 @@ extends Node3D
 var target_x: float = 0.0
 var is_dropped: bool = false  # Track if this is a dropped deer
 
+
 func _ready():
 	# Clamp starting lane to valid range
 	current_lane = clamp(start_lane, 0, lane_count - 1)
@@ -32,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	# Only move forward if not dropped
 	if not is_dropped:
 		# --- Move forward automatically ---
-		translate(Vector3(0, 0, (-global.forward_speed) * delta)/8.75)
+		translate(Vector3(0, 0, (-GlobalSpeed.forward_speed) * delta)/8.75)
 		
 		# --- Smoothly slide toward the target lane position ---
 		var pos = global_transform.origin
@@ -57,7 +58,7 @@ func _input(event):
 			_move_left()
 		elif event.is_action_pressed("DeerY_Right"):
 			_move_right()
-		elif event.is_action_pressed("DeerY_Drop") and Stopwatch2.time2 > 4:
+		elif event.is_action_pressed("DeerY_Drop") and Cooldown2.time2 <= 0:
 			_drop_deer()
 
 func _move_left():
@@ -91,7 +92,7 @@ func _drop_deer():
 	# Add collision detection for the dropped deer
 	_setup_collision(dropped_deer)
 	
-	Stopwatch2.time2 = 0
+	Cooldown2.time2 = 4
 
 func _setup_collision(deer):
 	# Add Area3D for collision detection
@@ -127,3 +128,15 @@ func _on_deer_hit_car(body, deer):
 		
 		# Remove the dropped deer
 		deer.queue_free()
+
+func _process(delta):
+	check_lane_and_damage()
+
+func check_lane_and_damage():
+	if CurrentLaneDeerX.DeerX_lane == CurrentLaneCarX.carX_lane \
+	and Cooldown2.time2 < 3.3 \
+	and Cooldown2.time2 > 3 \
+	and TimeAfterDamageX.time_post_damageX > 4:
+		CarXHealth.health -= 1
+		TimeAfterDamageX.time_post_damageX = 0
+		print("car X health: ", CarXHealth.health)

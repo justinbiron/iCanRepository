@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	# Only move forward if not dropped
 	if not is_dropped:
 		# --- Move forward automatically ---
-		translate(Vector3(0, 0, (-global.forward_speed) * delta)/8.75)
+		translate(Vector3(0, 0, (-GlobalSpeed.forward_speed) * delta)/8.75)
 		
 		# --- Smoothly slide toward the target lane position ---
 		var pos = global_transform.origin
@@ -57,7 +57,7 @@ func _input(event):
 			_move_left()
 		elif event.is_action_pressed("DeerX_Right"):
 			_move_right()
-		elif event.is_action_pressed("DeerX_Drop") and Stopwatch.time > 4:
+		elif event.is_action_pressed("DeerX_Drop") and Cooldown.time <= 0:
 			_drop_deer()
 
 func _move_left():
@@ -91,7 +91,7 @@ func _drop_deer():
 	# Add collision detection for the dropped deer
 	_setup_collision(dropped_deer)
 	
-	Stopwatch.time = 0
+	Cooldown.time = 4
 
 	
 
@@ -129,3 +129,15 @@ func _on_deer_hit_car(body, deer):
 		
 		# Remove the dropped deer
 		deer.queue_free()
+		
+func _process(delta):
+	check_lane_and_damage()
+
+func check_lane_and_damage():
+	if CurrentLaneDeerY.DeerY_lane == CurrentLaneCarY.carY_lane \
+	and Cooldown.time < 3.3 \
+	and Cooldown.time > 3 \
+	and TimeAfterDamageY.time_post_damageY > 4:
+		CarYHealth.health -= 1
+		TimeAfterDamageY.time_post_damageY = 0
+		print("car Y health:", CarYHealth.health)

@@ -1,0 +1,225 @@
+[gd_scene load_steps=26 format=3 uid="uid://bbw7n2hshocvo"]
+
+[ext_resource type="PackedScene" uid="uid://e88cbc7elxeg" path="res://pixel_car.glb" id="1_tjn2e"]
+[ext_resource type="Script" uid="uid://bkqwkqwc1oqfm" path="res://vehicleMovement.gd" id="1_w0p2i"]
+[ext_resource type="Script" uid="uid://c26lyl80xk4q5" path="res://CarX.gd" id="3_ywh4s"]
+[ext_resource type="Script" uid="uid://dg3ech4bnga6y" path="res://CarY.gd" id="4_kwhh3"]
+[ext_resource type="PackedScene" uid="uid://demfwwsq71dlj" path="res://chunk.tscn" id="5_4sclt"]
+[ext_resource type="Script" uid="uid://vd0y3xaslwmr" path="res://static_body_3d.gd" id="6_0osx7"]
+[ext_resource type="Script" uid="uid://b78no1coovs8f" path="res://camera_3d.gd" id="6_ywh4s"]
+[ext_resource type="PackedScene" uid="uid://u57kwnwxi64f" path="res://deer.glb" id="7_4sv2p"]
+[ext_resource type="Script" uid="uid://cmslcchujjyh3" path="res://DeerX.gd" id="8_0osx7"]
+[ext_resource type="Script" uid="uid://xdhdfy06ykn8" path="res://static_body_3d_2.gd" id="8_62wn8"]
+[ext_resource type="Script" uid="uid://dfpd33yqbpryw" path="res://DeerY.gd" id="9_62wn8"]
+[ext_resource type="PackedScene" uid="uid://3crbrcwhpyd0" path="res://Fabulous Borwo (1).glb" id="12_sj757"]
+[ext_resource type="Script" uid="uid://bn8h5gbnpr2l6" path="res://grid.gd" id="13_ups6l"]
+[ext_resource type="PackedScene" uid="uid://dvl68ic3ulf6h" path="res://pause_menu.tscn" id="14_7sxnj"]
+[ext_resource type="Texture2D" uid="uid://ccruwbl6lille" path="res://heart.png" id="15_cxp7d"]
+[ext_resource type="Script" uid="uid://fc4ck0w75f3c" path="res://label.gd" id="15_p3r6q"]
+[ext_resource type="Script" uid="uid://c2w2nyt2sq8wy" path="res://heart_bar_x.gd" id="16_3qsiq"]
+[ext_resource type="Script" uid="uid://ds72t5hcb4kki" path="res://heart_bar_y.gd" id="18_7087c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4sclt"]
+size = Vector3(1.1289063, 2.6158447, 2.7927246)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywh4s"]
+size = Vector3(1.823681, 1.1394444, 1.7667542)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ywh4s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ue4rx"]
+size = Vector3(37.07086, 1.1923981, 73.10241)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ups6l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cxp7d"]
+
+[sub_resource type="Environment" id="Environment_7087c"]
+background_mode = 1
+background_color = Color(1, 1, 0.41960785, 1)
+background_energy_multiplier = 1.45
+
+[node name="Node3D" type="RigidBody3D"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="VehicleBody3D" type="VehicleBody3D" parent="."]
+transform = Transform3D(1.0312464, 0, 0, 0, 1.0312464, 0, 0, 0, 1.0312464, -1.9318826, 8.933528, 10.873)
+collision_layer = 255
+collision_mask = 255
+script = ExtResource("1_w0p2i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D"]
+transform = Transform3D(1.1337614, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -0.07307446, 4.397603, -0.51501465)
+shape = SubResource("BoxShape3D_4sclt")
+
+[node name="Sketchfab_Scene2" parent="VehicleBody3D" instance=ExtResource("1_tjn2e")]
+transform = Transform3D(0.7999999, 0, 0, 0, 0.7999999, 0, 0, 0, 0.7999999, -0.059703708, 2.4912415, -0.46528625)
+script = ExtResource("3_ywh4s")
+metadata/_edit_lock_ = true
+
+[node name="Camera3D" type="Camera3D" parent="VehicleBody3D/Sketchfab_Scene2"]
+transform = Transform3D(1.7316025, -0.0012006719, 0.0039525484, 0.00032327234, 1.6911556, 0.3721, -0.0041182204, -0.37209815, 1.6911507, 3.3209674, 6.4620733, 10.657596)
+current = true
+fov = 49.2
+near = 0.25
+script = ExtResource("6_ywh4s")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="VehicleBody3D/Sketchfab_Scene2/Camera3D"]
+layers = 1023
+directional_shadow_max_distance = 268.5
+
+[node name="VehicleBody3D2" type="VehicleBody3D" parent="."]
+transform = Transform3D(1.7000002, 0, 0, 0, 1.7000002, 0, 0, 0, 1.7000002, 2.168962, 1.6058874, 3.0320673)
+collision_layer = 255
+collision_mask = 255
+
+[node name="Sketchfab_Scene" parent="VehicleBody3D2" instance=ExtResource("1_tjn2e")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.1674905, 6.9725447, 4.3415384)
+script = ExtResource("4_kwhh3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1587768, 8.159801, 4.4026995)
+shape = SubResource("BoxShape3D_ywh4s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 255
+collision_mask = 255
+physics_material_override = SubResource("PhysicsMaterial_ywh4s")
+script = ExtResource("6_0osx7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, -5.1260585e-13, 0, 1, 0, 5.1260585e-13, 0, 1, 0.8855888, 0.5672383, -12.605758)
+shape = SubResource("BoxShape3D_ue4rx")
+
+[node name="Node3D" parent="StaticBody3D" instance=ExtResource("5_4sclt")]
+transform = Transform3D(-2.5712579e-08, 0, 0.58823526, 0, 0.58823526, 0, -0.58823526, 0, -2.5712579e-08, 0.98262787, 0.5918981, 0.1701319)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -47.056)
+collision_layer = 255
+collision_mask = 255
+physics_material_override = SubResource("PhysicsMaterial_ywh4s")
+script = ExtResource("8_62wn8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, -5.1260585e-13, 0, 1, 0, 5.1260585e-13, 0, 1, 0.8855888, 0.5672383, -2.1026459)
+shape = SubResource("BoxShape3D_ue4rx")
+
+[node name="Node3D" parent="StaticBody3D2" instance=ExtResource("5_4sclt")]
+transform = Transform3D(-2.5712579e-08, 0, 0.58823526, 0, 0.58823526, 0, -0.58823526, 0, -2.5712579e-08, 0.98262787, 0.5918981, 0.1701319)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 255
+collision_mask = 255
+gravity_scale = 0.0
+
+[node name="DeerX" parent="RigidBody3D" instance=ExtResource("7_4sv2p")]
+transform = Transform3D(7.0000005, 0, 0, 0, 7.0000005, 0, 0, 0, 7.0000005, -1.8098426, 7.587911, -28.908344)
+script = ExtResource("8_0osx7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(2.2725866, 0, 0, 0, 2.2725866, 0, 0, 0, 2.2725866, -1.9460938, 6.9926515, -26.915396)
+shape = SubResource("BoxShape3D_ups6l")
+
+[node name="DeerY" parent="." instance=ExtResource("7_4sv2p")]
+transform = Transform3D(7.0000005, 0, 0, 0, 7.0000005, 0, 0, 0, 7.0000005, 4.330159, 7.587911, -29.066496)
+script = ExtResource("9_62wn8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeerY"]
+transform = Transform3D(0.27636504, 0, 0, 0, 0.27636504, 0, 0, 0, 0.27636504, 0, -0.11082739, 0.2920568)
+shape = SubResource("BoxShape3D_cxp7d")
+
+[node name="Tinkercad GLTF Scene" parent="." instance=ExtResource("12_sj757")]
+transform = Transform3D(116.6439, 0, 0, 0, -4.37114e-06, -233.27234, 0, 100.00002, -1.0196658e-05, -6.16, 6.845159, -12)
+script = ExtResource("13_ups6l")
+
+[node name="Tinkercad GLTF Scene2" parent="." instance=ExtResource("12_sj757")]
+transform = Transform3D(116.6439, 0, 0, 0, -4.37114e-06, -233.27234, 0, 100.00002, -1.0196658e-05, 2.279142, 6.845107, -12)
+script = ExtResource("13_ups6l")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("14_7sxnj")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="time" type="Label" parent="CanvasLayer2"]
+offset_left = 399.00006
+offset_right = 445.44373
+offset_bottom = 23.000004
+scale = Vector2(16.295135, 20.604359)
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer3"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+script = ExtResource("15_p3r6q")
+
+[node name="heart_barX" type="CanvasLayer" parent="."]
+script = ExtResource("16_3qsiq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="heart_barX"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.080000505, 0.07999949)
+
+[node name="heart" type="TextureRect" parent="heart_barX/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_cxp7d")
+
+[node name="heart2" type="TextureRect" parent="heart_barX/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_cxp7d")
+
+[node name="heart3" type="TextureRect" parent="heart_barX/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_cxp7d")
+
+[node name="heart4" type="TextureRect" parent="heart_barX/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_cxp7d")
+
+[node name="heart5" type="TextureRect" parent="heart_barX/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_cxp7d")
+
+[node name="heart_barY" type="CanvasLayer" parent="."]
+script = ExtResource("18_7087c")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="heart_barY"]
+offset_left = 913.0
+offset_right = 3829.0
+offset_bottom = 580.0
+scale = Vector2(0.080000505, 0.07999949)
+
+[node name="heart" type="TextureRect" parent="heart_barY/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_cxp7d")
+
+[node name="heart2" type="TextureRect" parent="heart_barY/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_cxp7d")
+
+[node name="heart3" type="TextureRect" parent="heart_barY/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_cxp7d")
+
+[node name="heart4" type="TextureRect" parent="heart_barY/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_cxp7d")
+
+[node name="heart5" type="TextureRect" parent="heart_barY/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_cxp7d")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7087c")
