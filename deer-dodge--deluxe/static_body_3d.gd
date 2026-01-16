@@ -24,7 +24,7 @@ func _process(_delta):
 	# If road is far enough behind, move it forward
 	if distance_from_camera > REPOSITION_DISTANCE:
 		# Move it 2 road lengths forward (to go in front of the other segment)
-		global_position.z -= ROAD_LENGTH * 2
+		global_position.z -= ROAD_LENGTH * 3
 		
 		# Force collision shape update for StaticBody3D
 		for child in get_children():

@@ -1,11 +1,3 @@
-res://pause_menu.tscn
-res://endscreen.gd
 res://main_screen.tscn
-res://heart_updater.gd
-res://quit_button.gd
-res://DeerX.gd
-res://restartend.gd
-res://main_menu.tscn
-res://resume.gd
-res://pause_menu.gd
-res://button.gd
+res://static_body_3d.gd
+res://static_body_3d_2.gd
